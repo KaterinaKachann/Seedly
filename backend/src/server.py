@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 from datetime import datetime
+from dotenv import load_dotenv
 import os
 import sys
 
@@ -10,6 +11,8 @@ from pydantic import BaseModel
 import uvicorn
 
 from dal import ToDoDAL, ListSummary, ToDoList
+
+load_dotenv()
 
 COLLECTION_NAME = "todo_lists"
 MONGODB_URI = os.environ["MONGODB_URI"]
